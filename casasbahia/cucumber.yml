@@ -1,0 +1,9 @@
+<%date = Time.now.strftime('%Y%m%d_%Hh%Mmin%Ss')%>
+
+default:  -p pretty -p AMBIENTE -p html
+pretty:   --format pretty
+hlg_cb:   AMBIENTE=homolog_cb
+prd_cb:   AMBIENTE=producao_cb
+hlg_pf:   AMBIENTE=homolog_pf
+prd_pf:   AMBIENTE=producao_pf
+html:     --format html --out=report/relatorio_<%= date %>.html

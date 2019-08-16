@@ -1,0 +1,10 @@
+source 'http://rubygems.org'
+
+gem 'cucumber'
+gem 'rspec'
+gem 'capybara'
+gem 'selenium-webdriver'
+gem 'site_prism', '>2.15.1'
+gem 'pry'
+gem 'commons'
+gem 'fileutils'
