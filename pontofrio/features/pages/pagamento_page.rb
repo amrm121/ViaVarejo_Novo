@@ -41,7 +41,7 @@ class Pagamento < SitePrism::Page
         wait_for_bt_fechar
     end
 
-    def valida_conclusao_compra      
+    def valida_conclusao_compra
         wait_until_el_displayed(:xpath, '//div[@id="bannerPadding_1513173879"]//child::a[1][@style="text-decoration:none; color:#c82b36; font-size:30px; font-weight:normal; "]', seconds = 5)                            
         $msgCpConcluida = msg_compra_concluida.text        
         $resultmsgCpConcluida = 'Sua compra foi concluída!' 
@@ -52,7 +52,7 @@ class Pagamento < SitePrism::Page
     end
 
     def validar_carrinho_compra
-        wait_until_el_displayed(:xpath, '//h2[@ng-show="!compraFinalizadaCtrl.isReservaSite"]', seconds = 5)
+        wait_until_el_displayed(:xpath, '//h2[@ng-show="!compraFinalizadaCtrl.isReservaSite"]', seconds = 10)
         $msgObrigadoCarrinho = msg_obg_carrinho.text
         $resultMsgObrigadoCarrinho = 'Obrigado por comprar no Pontofrio.com'                 
     end

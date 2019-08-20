@@ -43,45 +43,21 @@ Funcionalidade: Compra pelo o Retira
     Então confirmo que o número do pedido foi apresentado 
 
     Exemplos:
-      | produto   | cep      | loja                       |
-     # | 12369338  | 09520900 | Casas Bahia - Shopping ABC |
-     # | 2294	    | 05073000 | Casas Bahia - Lapa 2 |
-      | 2566		  | 05073000 | Casas Bahia - Lapa 2 |
-      | 4133	    | 05073000 | Casas Bahia - Lapa 2 |
-      | 298901		| 05073000 | Casas Bahia - Lapa 2 |
-      | 410915		| 05073000 | Casas Bahia - Lapa 2 |
-      | 1591124	  | 05073000 | Casas Bahia - Lapa 2 |
-      | 2181324	  | 05073000 | Casas Bahia - Lapa 2 |
-      | 2266346	  | 05073000 | Casas Bahia - Lapa 2 |
-      | 2372401	  | 05073000 | Casas Bahia - Lapa 2 |
-      | 2938841	  | 05073000 | Casas Bahia - Lapa 2 |
-      | 3636872	  | 05073000 | Casas Bahia - Lapa 2 |
-      | 3856587	  | 05073000 | Casas Bahia - Lapa 2 |
-      | 5082526	  | 05073000 | Casas Bahia - Lapa 2 |
-      | 5082530	  | 05073000 | Casas Bahia - Lapa 2 |
-      | 8618946	  | 05073000 | Casas Bahia - Lapa 2 |
-      | 9110951	  | 05073000 | Casas Bahia - Lapa 2 |
-      | 9663564	  | 05073000 | Casas Bahia - Lapa 2 |
-      | 10442841  | 05073000 | Casas Bahia - Lapa 2 |
-      | 11672606	| 05073000 | Casas Bahia - Lapa 2 |
-      | 11742745	| 05073000 | Casas Bahia - Lapa 2 |
-      | 11782659	| 36010002 | Casas Bahia - Juiz de Fora Halfeld |
-	    | 11782659	| 79002331 | Casas Bahia - Campo Grande 1 MS |
-	    | 11782659	| 64000060 | Casas Bahia - Galeria Jet |
-	    | 11782659	| 29165130 | Casas Bahia - Serra |
-	    | 11782659	| 74505016 | Casas Bahia - Setor Campinas |
-	    | 11782659	| 65010230 | Casas Bahia - Grande Center |
-	    | 11782659	| 88101000 | Casas Bahia - São José 2 |
-	    | 11782659	| 57020000 | Casas Bahia - Maceió |
-	    | 9073054	  | 64000060 | Casas Bahia - Galeria Jet |
-	    | 1767845	  | 74505016 | Casas Bahia - Setor Campinas |
-	    | 5236644	  | 79002331 | Casas Bahia - Campo Grande 1 MS |
-	    | 5236644	  | 29010002 | Casas Bahia - Vitória |
-	    | 11700686	| 74505016 | Casas Bahia - Setor Campinas |
-	    | 4451527	  | 49010380 | Casas Bahia - Aracajú |
-	    | 11439319	| 49010380 | Casas Bahia - Aracajú |
-	    | 13395307	| 49010380 | Casas Bahia - Aracajú |
-	    | 2293574	  | 49010380 | Casas Bahia - Aracajú |
-	    | 2293577	  | 49010380 | Casas Bahia - Aracajú |
-	    | 4451561	  | 80020320 | Casas Bahia - Curitiba |
-	    | 11439320	| 74505016 | Casas Bahia - Setor Campinas |
+      | produto | cep       | loja                                          |
+      #|15023008	|'02611002'	|Casas Bahia - Nova Cachoeirinha                |
+      #|2275	    |'02739000'	|Casas Bahia - Vila Nova Cachoeirinha           |
+      #|15077085	|'02611002'	|Casas Bahia - Nova Cachoeirinha                |
+      #|11795154	|'02936000'	|Casas Bahia - Pirituba                         |
+      #|22238	  |'03001000'	|Casas Bahia - Brás                             |
+      #|12662029	|'03066030'	|Casas Bahia - Shopping Metrô Boulevard Tatuapé |
+      #|4451562	|'13318000'	|Casas Bahia - Cabreúva                         | 
+
+
+      |2372401	|'13600040' |Casas Bahia - Araras|
+      |4290313	|'24710480' |Casas Bahia - Alcântara 2|
+      |1776000	|'28970000' |Casas Bahia - Araruama|
+      |1693919	|'06401050' |Casas Bahia - Barueri 1|
+      |5236644	|'07400490' |Casas Bahia - Arujá 2|
+      |3636872	|'11700005' |Casas Bahia - Boqueirão |
+      |12657575 |'21041010' |Casas Bahia - Bonsucesso 1|
+      |9110951	|'27330042' |Casas Bahia - Barra Mansa|

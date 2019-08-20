@@ -28,3 +28,7 @@ Capybara.configure do |config|
   config.app_host = CONFIG['url_padrao']
   config.default_max_wait_time = 20
 end
+
+World(Pages)
+World(Commons)
+World(Helper)

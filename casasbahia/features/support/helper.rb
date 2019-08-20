@@ -1,3 +1,4 @@
+
 module Helper
   def tirar_foto(nome_arquivo, resultado)
     timer_path = Time.now.strftime('%Y%m%d_%Hh%Mmin%Ss').to_s

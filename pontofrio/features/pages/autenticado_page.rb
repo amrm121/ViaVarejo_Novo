@@ -14,8 +14,8 @@ class Autenticacao < SitePrism::Page
 
   def login_sucesso
     wait_until_el_displayed(:id, 'Email', 2)
-    user.set 'nersa@nersa.com'
-    pass.set '123456'
+    user.set    'user_automacao03112014_090638117@cnova.com'
+    pass.set    '123456'
   end
 
   def click_login_confirma

@@ -18,7 +18,7 @@ end
 
 Então('o usuário deve autenticar com sucesso na home') do
   @texto = find('#lblLoginMsg')
-  expect(@texto.text).to eql 'Olá nersa'
+  expect(@texto.text).to eql 'Olá Cliente'
   autenticacao.remove_produto
   closepopup.tela_busca
 end

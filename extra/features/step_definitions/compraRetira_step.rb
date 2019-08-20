@@ -64,7 +64,7 @@ Quando('levo o sku retira com o {string} e {string} até a página de pagamento'
   end
 
   within_frame(carrinho.modalCep) do
-    find(:xpath, "//span[contains(text(), '#{loja}')]").click
+    find(:xpath, "//ul[@class='lista-resultado-estabelecimento']//span[contains(text(), '#{loja}')]").click
     expect(@msg_aguarde_email).to eql @result_msg_aguarde_email
   end
   carrinho.obtem_loja_retira

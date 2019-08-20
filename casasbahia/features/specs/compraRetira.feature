@@ -35,7 +35,7 @@ Funcionalidade: Compra pelo o Retira
       | produto  | cep      | 
       | 12369338 | 09520900 |
     
-  @realizar_compra_retira_com_loja_especifica   
+  @realizar_compra_retira_com_loja_especifica 
   Esquema do Cenario: Realizar Compra Retira com loja especifica
       Quando busco pelo o "<produto>"
       E levo o sku retira com o "<cep>" e "<loja>" até a página de pagamento
@@ -43,25 +43,33 @@ Funcionalidade: Compra pelo o Retira
       Então confirmo que o número do pedido foi apresentado 
 
       Exemplos:
-        | produto   | cep      | loja                       |
-        | 12369338  | 09520900 | Casas Bahia - Shopping ABC |
-        | 2294	    | 05073000 | Casas Bahia - Lapa 2       |
-        | 2566		  | 05073000 | Casas Bahia - Lapa 2       |
-        | 4133	    | 05073000 | Casas Bahia - Lapa 2       |
-        | 298901		| 05073000 | Casas Bahia - Lapa 2       |
-        | 410915		| 05073000 | Casas Bahia - Lapa 2       |
-        | 1591124	  | 05073000 | Casas Bahia - Lapa 2       |
-        | 2181324	  | 05073000 | Casas Bahia - Lapa 2       |
-        | 2266346	  | 05073000 | Casas Bahia - Lapa 2       |
-        | 2372401	  | 05073000 | Casas Bahia - Lapa 2       |
-        | 2938841	  | 05073000 | Casas Bahia - Lapa 2       |
-        | 3636872	  | 05073000 | Casas Bahia - Lapa 2       |
-        | 3856587	  | 05073000 | Casas Bahia - Lapa 2       |
-        | 5082526	  | 05073000 | Casas Bahia - Lapa 2       |
-        | 5082530	  | 05073000 | Casas Bahia - Lapa 2       |
-        | 8618946	  | 05073000 | Casas Bahia - Lapa 2       |
-        | 9110951	  | 05073000 | Casas Bahia - Lapa 2       |
-        | 9663564	  | 05073000 | Casas Bahia - Lapa 2       |
-        | 10442841  | 05073000 | Casas Bahia - Lapa 2       |
-        | 11672606	| 05073000 | Casas Bahia - Lapa 2       |
-        | 11742745	| 05073000 | Casas Bahia - Lapa 2       |
+        |produto    |cep        |loja                                |                      
+        #|11235957	|'13318000' |Casas Bahia - Cabreúva|
+        #|15341370	|'03066030' |Casas Bahia - Shopping Metrô Boulevard Tatuapé|
+        #|344689	  |'12940660' |Casas Bahia - Atibaia|
+        #|15341354	|'11250000' |Casas Bahia - Bertioga|
+        #|1765784	|'18400510' |Casas Bahia - Itapeva|
+        |3614064	|'13900005' |Casas Bahia - Amparo|
+        #|3623385	|'13900005' |PontoFrio - Amparo 2|
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
