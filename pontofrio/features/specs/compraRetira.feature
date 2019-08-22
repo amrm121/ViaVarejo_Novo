@@ -44,20 +44,22 @@ Funcionalidade: Compra pelo o Retira
 
     Exemplos:
       | produto | cep       | loja                                          |
-      #|15023008	|'02611002'	|Casas Bahia - Nova Cachoeirinha                |
-      #|2275	    |'02739000'	|Casas Bahia - Vila Nova Cachoeirinha           |
-      #|15077085	|'02611002'	|Casas Bahia - Nova Cachoeirinha                |
-      #|11795154	|'02936000'	|Casas Bahia - Pirituba                         |
-      #|22238	  |'03001000'	|Casas Bahia - Brás                             |
-      #|12662029	|'03066030'	|Casas Bahia - Shopping Metrô Boulevard Tatuapé |
-      #|4451562	|'13318000'	|Casas Bahia - Cabreúva                         | 
+      
+       |4451578	|'15500004'|	Casas Bahia - Votuporanga               |
+       |4451578	|'35680062'|	Casas Bahia - Itauna                    |
+       |4451578	|'35680062'|	Casas Bahia - Itauna                    |
+       |4451578	|'37002080'|	PontoFrio - Varginha 2                  |
+       |4451578	|'44571355'|	Casas Bahia - Santo Antonio de Jesus    |
+       |4451578	|'15400000'|	Casas Bahia - Olímpia                   |
+       |4451578	|'7252000'	|Casas Bahia - Shopping Bonsucesso          |
+       |4451578	|'9972260'	|Casas Bahia - Eldorado                     |
+       |4451578	|'87200268'|	Casas Bahia - Cianorte                  |
+       |4451578	|'79300040'|	Casas Bahia - Corumbá                   |
+       |4451578	|'16901010'|	Casas Bahia - Andradina                 |
+       |4451578	|'16901010'|	Casas Bahia - Andradina                 |
+       |4451578	|'79500000'|	Casas Bahia - Paranaíba                 |
+       |4451578	|'32400221'|	Casas Bahia - Ibirité                   |
+       |4451578	|'21351050'|	PontoFrio - Madureira shopping 2        |
+ 
 
-
-      |2372401	|'13600040' |Casas Bahia - Araras|
-      |4290313	|'24710480' |Casas Bahia - Alcântara 2|
-      |1776000	|'28970000' |Casas Bahia - Araruama|
-      |1693919	|'06401050' |Casas Bahia - Barueri 1|
-      |5236644	|'07400490' |Casas Bahia - Arujá 2|
-      |3636872	|'11700005' |Casas Bahia - Boqueirão |
-      |12657575 |'21041010' |Casas Bahia - Bonsucesso 1|
-      |9110951	|'27330042' |Casas Bahia - Barra Mansa|
+     

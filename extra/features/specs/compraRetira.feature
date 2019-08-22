@@ -44,9 +44,19 @@ Funcionalidade: Compra pelo o Retira
 
     Exemplos:
       | produto | cep      | loja                       |      
-      |50001723 |'03001000'|Casas Bahia - Brás                              |
- #     |12662038	|'03066030'|Casas Bahia - Shopping Metrô Boulevard Tatuapé|
- #     |4646595	|'13318000'|Casas Bahia - Cabreúva|
-      #|6209573	|'13414900'|PontoFrio - Shopping Piracicaba|
-      #|5236644	|'13450013'|Casas Bahia - Shopping Tivoli Center|
-    
+       |4451578	|'15500004'|	Casas Bahia - Votuporanga               |
+       |4451578	|'35680062'|	Casas Bahia - Itauna                    |
+       |4451578	|'35680062'|	Casas Bahia - Itauna                    |
+       |4451578	|'37002080'|	PontoFrio - Varginha 2                  |
+       |4451578	|'44571355'|	Casas Bahia - Santo Antonio de Jesus    |
+       |4451578	|'15400000'|	Casas Bahia - Olímpia                   |
+       |4451578	|'7252000'	|Casas Bahia - Shopping Bonsucesso          |
+       |4451578	|'9972260'	|Casas Bahia - Eldorado                     |
+       |4451578	|'87200268'|	Casas Bahia - Cianorte                  |
+       |4451578	|'79300040'|	Casas Bahia - Corumbá                   |
+       |4451578	|'16901010'|	Casas Bahia - Andradina                 |
+       |4451578	|'16901010'|	Casas Bahia - Andradina                 |
+       |4451578	|'79500000'|	Casas Bahia - Paranaíba                 |
+       |4451578	|'32400221'|	Casas Bahia - Ibirité                   |
+       |4451578	|'21351050'|	PontoFrio - Madureira shopping 2        |
+ 
