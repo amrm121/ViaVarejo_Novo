@@ -43,14 +43,9 @@ Funcionalidade: Compra pelo o Retira
       Então confirmo que o número do pedido foi apresentado 
 
       Exemplos:
-        |produto    |cep        |loja                                |                      
+        |produto    |cep      |loja                                          |                      
         #|11235957	|'13318000' |Casas Bahia - Cabreúva|
-        #|15341370	|'03066030' |Casas Bahia - Shopping Metrô Boulevard Tatuapé|
-        #|344689	  |'12940660' |Casas Bahia - Atibaia|
-        #|15341354	|'11250000' |Casas Bahia - Bertioga|
-        #|1765784	|'18400510' |Casas Bahia - Itapeva|
-        |3614064	|'13900005' |Casas Bahia - Amparo|
-        #|3623385	|'13900005' |PontoFrio - Amparo 2|
+        |15341370	|'03066030' |Casas Bahia - Shopping Metrô Boulevard Tatuapé|
 
 
 
