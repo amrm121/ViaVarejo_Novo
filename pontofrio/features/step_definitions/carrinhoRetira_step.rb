@@ -54,3 +54,26 @@ E('clica no botão Concluir compra com garantia e seguro') do
   expect(@forma_entrega).to eql @result_forma_entrega
   expect(@vl_frete).to eql @result_vl_frete
 end
+
+E('clica no botao Comprar') do
+  sleep 2
+  closepopup.tela_busca
+  carrinho.click_bt_compra  
+end
+
+E("informa o {string} na tela do carrinho") do |cep|
+  carrinho.informa_cep_no_carrinho cep
+end
+
+E('verifico que estou na tela de Endereço com opção de Entrega diferente do retira') do  
+  carrinho.endereco_tela_valida_entrega_nao_retira
+end
+
+E('altero a opcao de entrega para retira') do  
+  carrinho.endereco_tela_seleciona_checkbox_retira
+end
+
+E('seleciona os combos do retira rápido') do
+  carrinho.endereco_tela_preencher_local_retira
+  carrinho.confirma_endereco
+end

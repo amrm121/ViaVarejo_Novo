@@ -128,7 +128,7 @@ class Carrinho < SitePrism::Page
     page.execute_script('arguments[0].scrollIntoView();', bt_concluir_end)
     sleep 2       
     bt_concluir_end.click
-    bt_concluir_end.click
+    #bt_concluir_end.click
     
     wait_until_el_displayed(:xpath, '//div[@class="SubtituloPayment"]//child::p[@class="subtitulo"]', 5)
     @titulo_pagamento = find(:xpath, '//div[@class="SubtituloPayment"]//child::p[@class="subtitulo"]').text

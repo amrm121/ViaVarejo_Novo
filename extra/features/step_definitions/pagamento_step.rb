@@ -12,6 +12,6 @@ E('valida se a compra foi realizada com sucesso') do
   closepopup.tela_compra_concluida
   pagamento.validar_carrinho_compra
   expect($msgObrigadoCarrinho).to eql $resultMsgObrigadoCarrinho
-  pagamento.validar_localRetirada
+  pagamento.validar_localRetirada  
   expect($result_lojaRetira).to eql $localRetirada
 end

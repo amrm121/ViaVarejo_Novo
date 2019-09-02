@@ -13,5 +13,6 @@ E('valida se a compra foi realizada com sucesso') do
   pagamento.validar_carrinho_compra
   expect($msgObrigadoCarrinho).to eql $resultMsgObrigadoCarrinho
   pagamento.validar_localRetirada
+  binding.pry
   expect($result_lojaRetira).to eql $localRetirada
 end

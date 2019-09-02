@@ -60,3 +60,14 @@ Funcionalidade: Compra pelo o Retira
        |4451578	|'32400221'|	Casas Bahia - Ibirité                   |
        |4451578	|'21351050'|	PontoFrio - Madureira shopping 2        |
  
+  @alterar_compra_normal_para_retira
+  Esquema do Cenario: Alterar comprar normal para retira
+    Quando busco pelo o "<produto>"
+    E levo o sku até a tela de Endereço através do fluxo de compra informando o "<cep>"
+    E altero a forma de entrega para a opção Retira
+    E finalizo a compra
+    Então confirmo que o número do pedido foi apresentado
+
+    Exemplos:
+      | produto  | cep        | 
+      | 15077085 | '09520125' |  
