@@ -48,11 +48,17 @@ Funcionalidade: Compra pelo o Retira
         |15341370	|'03066030' |Casas Bahia - Shopping Metrô Boulevard Tatuapé|
 
 
+  @alterar_compra_normal_para_retira
+  Esquema do Cenario: Alterar comprar normal para retira
+    Quando busco pelo o "<produto>"
+    E levo o sku até a tela de Endereço através do fluxo de compra informando o "<cep>"
+    E altero a forma de entrega para a opção Retira
+    E finalizo a compra
+    Então confirmo que o número do pedido foi apresentado
 
-
-
-        
-        
+    Exemplos:
+      | produto  | cep        | 
+      | 15077085 | '09520125' |   
         
         
         

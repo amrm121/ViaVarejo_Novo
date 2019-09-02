@@ -72,3 +72,15 @@ Quando('levo o sku retira com o {string} e {string} até a página de pagamento'
   step 'clica no botão Concluir compra'
   step 'confirmar o endereço pressionando o botão Concluir'
 end
+
+Quando('levo o sku até a tela de Endereço através do fluxo de compra informando o {string}') do |cep|
+  step 'o usuario seleciona um produto no retorno da pesquisa'  
+  step 'clica no botao Comprar'  
+  step "informa o #{cep} na tela do carrinho"
+  step 'verifico que estou na tela de Endereço com opção de Entrega diferente do retira'
+end
+
+Quando('altero a forma de entrega para a opção Retira') do  
+  step 'altero a opcao de entrega para retira'
+  step 'seleciona os combos do retira rápido'
+end
