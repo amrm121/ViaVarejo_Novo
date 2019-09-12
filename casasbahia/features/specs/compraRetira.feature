@@ -59,18 +59,4 @@ Funcionalidade: Compra pelo o Retira
     Exemplos:
       | produto  | cep        | 
       | 15077085 | '09520125' |   
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+           

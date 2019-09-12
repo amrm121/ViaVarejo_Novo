@@ -1,0 +1,175 @@
+=> [[32m#<Cucumber::Core::Report::Summary:0x0000000007b1b050[0m
+  @previous_test_case[32m=[0m[1;36mnil[0m,
+  @test_cases[32m=[0m[32m#<Cucumber::Core::Test::Result::Summary:0x0000000007b1b028[0m @durations[32m=[0m[], @exceptions[32m=[0m[], @totals[32m=[0m{}[32m>[0m,
+  @test_steps[32m=[0m
+   [32m#<Cucumber::Core::Test::Result::Summary:0x0000000007b1af38[0m
+    @durations[32m=[0m
+     [[32m#<Cucumber::Core::Test::Result::Duration:0x0000000008c19fa0[0m @nanoseconds[32m=[0m[1;34m8306626836[0m[32m>[0m,
+      [32m#<Cucumber::Core::Test::Result::Duration:0x0000000007b49068[0m @nanoseconds[32m=[0m[1;34m7422885330[0m[32m>[0m],
+    @exceptions[32m=[0m[],
+    @totals[32m=[0m{[33m:passed[0m=>[1;34m2[0m}[32m>[0m[32m>[0m,
+ [32m#<struct Cucumber::Formatter::LegacyApi::Adapter[0m
+  formatter[32m=[0m
+   [32m#<Cucumber::Formatter::Pretty:0x00000000066a9860[0m
+    @col_index[32m=[0m[1;34m0[0m,
+    @config[32m=[0m
+     [32m#<Cucumber::Configuration:0x00000000064ac698[0m
+      @options[32m=[0m
+       {[33m:autoload_code_paths[0m=>[[31m[1;31m"[0m[31mfeatures/support[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31mfeatures/step_definitions[1;31m"[0m[31m[0m],
+        [33m:filters[0m=>[],
+        [33m:strict[0m=>[32m#<Cucumber::Core::Test::Result::StrictConfiguration:0x00000000064724c0[0m @settings[32m=[0m{[33m:flaky[0m=>[33m:default[0m, [33m:undefined[0m=>[33m:default[0m, [33m:pending[0m=>[33m:default[0m}[32m>[0m,
+        [33m:require[0m=>[],
+        [33m:dry_run[0m=>[1;36mfalse[0m,
+        [33m:fail_fast[0m=>[1;36mfalse[0m,
+        [33m:formats[0m=>[[[31m[1;31m"[0m[31mpretty[1;31m"[0m[31m[0m, {}, [32m#<IO:<STDOUT>>[0m]],
+        [33m:excludes[0m=>[],
+        [33m:tag_expressions[0m=>[[31m[1;31m"[0m[31m@teste[1;31m"[0m[31m[0m],
+        [33m:name_regexps[0m=>[],
+        [33m:env_vars[0m=>{[31m[1;31m"[0m[31mAMBIENTE[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mproducao_cb[1;31m"[0m[31m[0m},
+        [33m:diff_enabled[0m=>[1;36mtrue[0m,
+        [33m:snippets[0m=>[1;36mtrue[0m,
+        [33m:source[0m=>[1;36mtrue[0m,
+        [33m:duration[0m=>[1;36mtrue[0m,
+        [33m:event_bus[0m=>
+         [32m#<Cucumber::Core::EventBus:0x00000000064be280[0m
+          @event_queue[32m=[0m
+           [[32m#<Cucumber::Events::StepDefinitionRegistered:0x0000000007643208[0m
+             @step_definition[32m=[0m
+              [32m#<Cucumber::Glue::StepDefinition:0x0000000007643438[0m
+               @expression[32m=[0m
+                [32m#<Cucumber::CucumberExpressions::CucumberExpression:0x0000000007652078[0m
+                 @parameter_types[32m=[0m[],
+                 @source[32m=[0m[31m[1;31m"[0m[31mque o usuário esteja na página home da bandeira[1;31m"[0m[31m[0m,
+                 @tree_regexp[32m=[0m
+                  [32m#<Cucumber::CucumberExpressions::TreeRegexp:0x0000000007651c18[0m
+                   @group_builder[32m=[0m[32m#<Cucumber::CucumberExpressions::GroupBuilder:0x0000000007651b00[0m @capturing[32m=[0m[1;36mtrue[0m, @group_builders[32m=[0m[][32m>[0m,
+                   @regexp[32m=[0m[35m[1;35m/[0m[35m^que o usuário esteja na página home da bandeira$[1;35m/[0m[35m[0m[32m>[0m[32m>[0m,
+               @proc[32m=[0m[32m#<Proc:0x00000000076520a0@c:/QA_Automacao/Squad Retira Rápido/ViaVarejo_Novo/casasbahia/features/step_definitions/autenticacao.rb:1>[0m,
+               @registry[32m=[0m
+                [32m#<Cucumber::Glue::RegistryAndMore:0x00000000064be0c8[0m
+                 @configuration[32m=[0m[32m#<Cucumber::Configuration:0x00000000064ac698[0m ...[32m>[0m,
+                 @current_world[32m=[0m
+                  [32m#<Object+Helper+Commons+Pages+Capybara::RSpecMatchers+Capybara::DSLRSpecProxyInstaller+Capybara::DSL+RSpec::Matchers+Cucumber::Glue::ProtoWorld+#<Module:0x0000000006919e60>+PP::ObjectMixin+JSON::Ext::Generator::GeneratorMethods::Object+Kernel+:0x348cf94>[0m,
+                 @hooks[32m=[0m
+                  {[33m:after[0m=>
+                    [[32m#<Cucumber::Glue::Hook:0x0000000006b4fec8[0m
+                      @location[32m=[0m
+                       [32m#<struct Cucumber::Core::Ast::Location::Precise[0m
+                        file[32m=[0m[31m[1;31m"[0m[31mcapybara-3.29.0/lib/capybara/cucumber.rb[1;31m"[0m[31m[0m,
+                        lines[32m=[0m[32m#<struct Cucumber::Core::Ast::Location::Lines[0m data[32m=[0m[32m#<Set: {[0m[1;34m10[0m}>[32m>[0m[32m>[0m,
+                      @proc[32m=[0m[32m#<Proc:0x0000000006b4fef0@C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/capybara-3.29.0/lib/capybara/cucumber.rb:10>[0m,
+                      @registry[32m=[0m[32m#<Cucumber::Glue::RegistryAndMore:0x00000000064be0c8[0m ...[32m>[0m,
+                      @tag_expressions[32m=[0m[][32m>[0m,
+                     [32m#<Cucumber::Glue::Hook:0x00000000077cd600[0m
+                      @location[32m=[0m
+                       [32m#<struct Cucumber::Core::Ast::Location::Precise[0m
+                        file[32m=[0m[31m[1;31m"[0m[31mc:/QA_Automacao/Squad Retira Rápido/ViaVarejo_Novo/casasbahia/features/support/hooks.rb[1;31m"[0m[31m[0m,
+                        lines[32m=[0m[32m#<struct Cucumber::Core::Ast::Location::Lines[0m data[32m=[0m[32m#<Set: {[0m[1;34m16[0m}>[32m>[0m[32m>[0m,
+                      @proc[32m=[0m[32m#<Proc:0x00000000077cd628@c:/QA_Automacao/Squad Retira Rápido/ViaVarejo_Novo/casasbahia/features/support/hooks.rb:16>[0m,
+                      @registry[32m=[0m[32m#<Cucumber::Glue::RegistryAndMore:0x00000000064be0c8[0m ...[32m>[0m,
+                      @tag_expressions[32m=[0m[][32m>[0m],
+                   [33m:before[0m=>
+                    [[32m#<Cucumber::Glue::Hook:0x0000000006b4f860[0m
+                      @location[32m=[0m
+                       [32m#<struct Cucumber::Core::Ast::Location::Precise[0m
+                        file[32m=[0m[31m[1;31m"[0m[31mcapybara-3.29.0/lib/capybara/cucumber.rb[1;31m"[0m[31m[0m,
+                        lines[32m=[0m[32m#<struct Cucumber::Core::Ast::Location::Lines[0m data[32m=[0m[32m#<Set: {[0m[1;34m14[0m}>[32m>[0m[32m>[0m,
+                      @proc[32m=[0m[32m#<Proc:0x0000000006b4f888@C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/capybara-3.29.0/lib/capybara/cucumber.rb:14>[0m,
+                      @registry[32m=[0m[32m#<Cucumber::Glue::RegistryAndMore:0x00000000064be0c8[0m ...[32m>[0m,
+                      @tag_expressions[32m=[0m[][32m>[0m,
+                     [32m#<Cucumber::Glue::Hook:0x0000000006b4f298[0m
+                      @location[32m=[0m
+                       [32m#<struct Cucumber::Core::Ast::Location::Precise[0m
+                        file[32m=[0m[31m[1;31m"[0m[31mcapybara-3.29.0/lib/capybara/cucumber.rb[1;31m"[0m[31m[0m,
+                        lines[32m=[0m[32m#<struct Cucumber::Core::Ast::Location::Lines[0m data[32m=[0m[32m#<Set: {[0m[1;34m18[0m}>[32m>[0m[32m>[0m,
+                      @proc[32m=[0m[32m#<Proc:0x0000000006b4f2c0@C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/capybara-3.29.0/lib/capybara/cucumber.rb:18>[0m,
+                      @registry[32m=[0m[32m#<Cucumber::Glue::RegistryAndMore:0x00000000064be0c8[0m ...[32m>[0m,
+                      @tag_expressions[32m=[0m[[31m[1;31m"[0m[31m@javascript[1;31m"[0m[31m[0m][32m>[0m,
+                     [32m#<Cucumber::Glue::Hook:0x0000000006b4ecd0[0m
+                      @location[32m=[0m
+                       [32m#<struct Cucumber::Core::Ast::Location::Precise[0m
+                        file[32m=[0m[31m[1;31m"[0m[31mcapybara-3.29.0/lib/capybara/cucumber.rb[1;31m"[0m[31m[0m,
+                        lines[32m=[0m[32m#<struct Cucumber::Core::Ast::Location::Lines[0m data[32m=[0m[32m#<Set: {[0m[1;34m22[0m}>[32m>[0m[32m>[0m,
+                      @proc[32m=[0m[32m#<Proc:0x0000000006b4ecf8@C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/capybara-3.29.0/lib/capybara/cucumber.rb:22>[0m,
+                      @registry[32m=[0m[32m#<Cucumber::Glue::RegistryAndMore:0x00000000064be0c8[0m ...[32m>[0m,
+                      @tag_expressions[32m=[0m[][32m>[0m,
+                     [32m#<Cucumber::Glue::Hook:0x00000000077cda38[0m
+                      @location[32m=[0m
+                       [32m#<struct Cucumber::Core::Ast::Location::Precise[0m
+                        file[32m=[0m[31m[1;31m"[0m[31mc:/QA_Automacao/Squad Retira Rápido/ViaVarejo_Novo/casasbahia/features/support/hooks.rb[1;31m"[0m[31m[0m,
+                        lines[32m=[0m[32m#<struct Cucumber::Core::Ast::Location::Lines[0m data[32m=[0m[32m#<Set: {[0m[1;34m11[0m}>[32m>[0m[32m>[0m,
+                      @proc[32m=[0m[32m#<Proc:0x00000000077cda60@c:/QA_Automacao/Squad Retira Rápido/ViaVarejo_Novo/casasbahia/features/support/hooks.rb:11>[0m,
+                      @registry[32m=[0m[32m#<Cucumber::Glue::RegistryAndMore:0x00000000064be0c8[0m ...[32m>[0m,
+                      @tag_expressions[32m=[0m[][32m>[0m],
+                   [33m:after_configuration[0m=>[],
+                   [33m:after_step[0m=>[],
+                   [33m:around[0m=>[]},
+                 @namespaced_world_modules[32m=[0m{},
+                 @parameter_type_registry[32m=[0m
+                  [32m#<Cucumber::CucumberExpressions::ParameterTypeRegistry:0x00000000064be078[0m
+                   @parameter_type_by_name[32m=[0m
+                    {[31m[1;31m"[0m[31mint[1;31m"[0m[31m[0m=>
+                      [32m#<Cucumber::CucumberExpressions::ParameterType:0x00000000064bdf60[0m
+                       @name[32m=[0m[31m[1;31m"[0m[31mint[1;31m"[0m[31m[0m,
+                       @prefer_for_regexp_match[32m=[0m[1;36mtrue[0m,
+                       @regexps[32m=[0m[[31m[1;31m"[0m[31m-?[1;35m\\[0m[31md+[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m[1;35m\\[0m[31md+[1;31m"[0m[31m[0m],
+                       @transformer[32m=[0m
+                        [32m#<Proc:0x00000000064bdf88@C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/cucumber-expressions-6.0.1/lib/cucumber/cucumber_expressions/parameter_type_registry.rb:17 (lambda)>[0m,
+                       @type[32m=[0m[1;34;4mInteger[0m,
+                       @use_for_snippets[32m=[0m[1;36mtrue[0m[32m>[0m,
+                     [31m[1;31m"[0m[31mfloat[1;31m"[0m[31m[0m=>
+                      [32m#<Cucumber::CucumberExpressions::ParameterType:0x00000000064bdc90[0m
+                       @name[32m=[0m[31m[1;31m"[0m[31mfloat[1;31m"[0m[31m[0m,
+                       @prefer_for_regexp_match[32m=[0m[1;36mfalse[0m,
+                       @regexps[32m=[0m[[31m[1;31m"[0m[31m-?[1;35m\\[0m[31md*[1;35m\\[0m[31m.[1;35m\\[0m[31md+[1;31m"[0m[31m[0m],
+                       @transformer[32m=[0m
+                        [32m#<Proc:0x00000000064bdcb8@C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/cucumber-expressions-6.0.1/lib/cucumber/cucumber_expressions/parameter_type_registry.rb:18 (lambda)>[0m,
+                       @type[32m=[0m[1;34;4mFloat[0m,
+                       @use_for_snippets[32m=[0m[1;36mtrue[0m[32m>[0m,
+                     [31m[1;31m"[0m[31mword[1;31m"[0m[31m[0m=>
+                      [32m#<Cucumber::CucumberExpressions::ParameterType:0x00000000064bda88[0m
+                       @name[32m=[0m[31m[1;31m"[0m[31mword[1;31m"[0m[31m[0m,
+                       @prefer_for_regexp_match[32m=[0m[1;36mfalse[0m,
+                       @regexps[32m=[0m[[31m[1;31m"[0m[31m[1;35m\\[0m[31mw+[1;31m"[0m[31m[0m],
+                       @transformer[32m=[0m
+                        [32m#<Proc:0x00000000064bdab0@C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/cucumber-expressions-6.0.1/lib/cucumber/cucumber_expressions/parameter_type_registry.rb:19 (lambda)>[0m,
+                       @type[32m=[0m[1;34;4mString[0m,
+                       @use_for_snippets[32m=[0m[1;36mfalse[0m[32m>[0m,
+                     [31m[1;31m"[0m[31mstring[1;31m"[0m[31m[0m=>
+                      [32m#<Cucumber::CucumberExpressions::ParameterType:0x00000000064bd880[0m
+                       @name[32m=[0m[31m[1;31m"[0m[31mstring[1;31m"[0m[31m[0m,
+                       @prefer_for_regexp_match[32m=[0m[1;36mfalse[0m,
+                       @regexps[32m=[0m[[31m[1;31m"[0m[31m[1;35m\"[0m[31m([^[1;35m\"[0m[31m[1;35m\\[0m[31m[1;35m\\[0m[31m]*([1;35m\\[0m[31m[1;35m\\[0m[31m.[^[1;35m\"[0m[31m[1;35m\\[0m[31m[1;35m\\[0m[31m]*)*)[1;35m\"[0m[31m|'([^'[1;35m\\[0m[31m[1;35m\\[0m[31m]*([1;35m\\[0m[31m[1;35m\\[0m[31m.[^'[1;35m\\[0m[31m[1;35m\\[0m[31m]*)*)'[1;31m"[0m[31m[0m],
+                       @transformer[32m=[0m
+                        [32m#<Proc:0x00000000064bd8a8@C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/cucumber-expressions-6.0.1/lib/cucumber/cucumber_expressions/parameter_type_registry.rb:20 (lambda)>[0m,
+                       @type[32m=[0m[1;34;4mString[0m,
+                       @use_for_snippets[32m=[0m[1;36mtrue[0m[32m>[0m},
+                   @parameter_types_by_regexp[32m=[0m
+                    {[31m[1;31m"[0m[31m-?[1;35m\\[0m[31md+[1;31m"[0m[31m[0m=>
+                      [[32m#<Cucumber::CucumberExpressions::ParameterType:0x00000000064bdf60[0m
+                        @name[32m=[0m[31m[1;31m"[0m[31mint[1;31m"[0m[31m[0m,
+                        @prefer_for_regexp_match[32m=[0m[1;36mtrue[0m,
+                        @regexps[32m=[0m[[31m[1;31m"[0m[31m-?[1;35m\\[0m[31md+[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m[1;35m\\[0m[31md+[1;31m"[0m[31m[0m],
+                        @transformer[32m=[0m
+                         [32m#<Proc:0x00000000064bdf88@C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/cucumber-expressions-6.0.1/lib/cucumber/cucumber_expressions/parameter_type_registry.rb:17 (lambda)>[0m,
+                        @type[32m=[0m[1;34;4mInteger[0m,
+                        @use_for_snippets[32m=[0m[1;36mtrue[0m[32m>[0m],
+                     [31m[1;31m"[0m[31m[1;35m\\[0m[31md+[1;31m"[0m[31m[0m=>
+                      [[32m#<Cucumber::CucumberExpressions::ParameterType:0x00000000064bdf60[0m
+                        @name[32m=[0m[31m[1;31m"[0m[31mint[1;31m"[0m[31m[0m,
+                        @prefer_for_regexp_match[32m=[0m[1;36mtrue[0m,
+                        @regexps[32m=[0m[[31m[1;31m"[0m[31m-?[1;35m\\[0m[31md+[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m[1;35m\\[0m[31md+[1;31m"[0m[31m[0m],
+                        @transformer[32m=[0m
+                         [32m#<Proc:0x00000000064bdf88@C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/cucumber-expressions-6.0.1/lib/cucumber/cucumber_expressions/parameter_type_registry.rb:17 (lambda)>[0m,
+                        @type[32m=[0m[1;34;4mInteger[0m,
+                        @use_for_snippets[32m=[0m[1;36mtrue[0m[32m>[0m],
+                     [31m[1;31m"[0m[31m-?[1;35m\\[0m[31md*[1;35m\\[0m[31m.[1;35m\\[0m[31md+[1;31m"[0m[31m[0m=>
+                      [[32m#<Cucumber::CucumberExpressions::ParameterType:0x00000000064bdc90[0m
+                        @name[32m=[0m[31m[1;31m"[0m[31mfloat[1;31m"[0m[31m[0m,
+                        @prefer_for_regexp_match[32m=[0m[1;36mfalse[0m,
+                        @regexps[32m=[0m[[31m[1;31m"[0m[31m-?[1;35m\\[0m[31md*[1;35m\\[0m[31m.[1;35m\\[0m[31md+[1;31m"[0m[31m[0m],
+                        @transformer[32m=[0m
+                         [32m#<Proc:0x00000000064bdcb8@C:/Ruby25-x64/lib/ruby/gems/2.5.0/gems/cucumber-expressions-6.0.1/lib/cucumber/cucumber_expressions/parameter_type_registry.rb:18 (lambda)>[0m,
+                        @type[32m=[0m[1;34;4mFloat[0m,
+                        @use_for_snippets[32m=[0m[1;36mtrue[0m[32m>[0m],
+                     [31m[1;31m"[0m[31m[1;35m\\[0m[31mw+[1;31m"[0m[31

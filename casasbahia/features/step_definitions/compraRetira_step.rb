@@ -84,3 +84,23 @@ Quando('altero a forma de entrega para a opção Retira') do
   step 'altero a opcao de entrega para retira'
   step 'seleciona os combos do retira rápido'
 end
+
+Dado('que o usuario esteja na página home da bandeira') do
+  step 'que o usuário esteja na página home da bandeira'
+end
+
+Então('levo o sku retira com o {string} até o modal que confirma a retirada no local') do |cep|
+  step 'o usuario seleciona um produto no retorno da pesquisa'  
+  step 'clica no botão Retira Rápido'  
+  
+  within_frame(carrinho.modalCep) do
+    carrinho.cp_cep.set cep
+    carrinho.bt_LupaRetira.click    
+    find(:xpath, "//a[@href='javascript:void(0);']//strong[contains(text(), '840 m')]").click
+    sleep 1
+    @loja = find('.detalhe-retirada-linha3-nome').text
+    @lojaclick = 'Casas Bahia - Cidade Dutra'    
+    expect(@loja).to eql @lojaclick
+  end    
+  puts  "Loja Encontrada'"
+end

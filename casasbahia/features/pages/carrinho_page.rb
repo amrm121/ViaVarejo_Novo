@@ -1,6 +1,7 @@
 class Carrinho < SitePrism::Page
   element :click_produto, '.nm-product-img-container'
   element :bt_retira, '#ctl00_Conteudo_ctl21_btnRetirarNaLoja'
+  element :bt_retira_modal_mais_opçoes, '#ctl00_Conteudo_ctl26_rptLojistas_ctl00_lnkRetira'
   element :cp_cep, :xpath, '//div[@class="input-buscal-modal"]//child::input[@name="cep"]'
   element :bt_LupaRetira, :xpath, '//div[@class="input-buscal-modal"]//child::input[@class="lupa-modal home"]'
   element :click_loja_cb, :xpath, '//img[@src="https://www.casasbahia-imagens.com.br/App_Themes/CasasBahia/img/retira-facil/logo/CasasBahia.png"]'
@@ -39,8 +40,11 @@ class Carrinho < SitePrism::Page
   end
 
   def click_bt_retira
-    wait_until_el_displayed(:id, 'ctl00_Conteudo_ctl21_btnRetirarNaLoja', 5)
-    bt_retira.click
+    if page.has_selector?(:id, 'ctl00_Conteudo_ctl21_btnRetirarNaLoja')
+      bt_retira.click      
+    else 
+      bt_retira_modal_mais_opçoes.click
+    end
   end
 
   def obtem_titulo_informa_cep
