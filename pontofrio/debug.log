@@ -59,3 +59,5 @@
 [0821/072557.357:ERROR:process_reader_win.cc(151)] SuspendThread: Acesso negado. (0x5)
 [0821/072557.357:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
 [0821/072557.357:ERROR:exception_snapshot_win.cc(98)] thread ID 19764 not found in process
+[0920/095300.228:ERROR:process_reader_win.cc(123)] NtOpenThread: {Acesso Negado} Um processo solicitou acesso a um objeto, mas o direito de acesso não lhe foi concedido. (0xc0000022)
+[0920/095300.229:ERROR:exception_snapshot_win.cc(98)] thread ID 6224 not found in process

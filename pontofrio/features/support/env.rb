@@ -7,7 +7,7 @@ require 'rspec'
 require 'selenium-webdriver'
 require 'site_prism'
 require 'pry'
-require 'fileutils'
+#require 'fileutils'
 require_relative 'helper.rb'
 require_relative 'commons.rb'
 require_relative 'page_helper.rb'
@@ -18,7 +18,7 @@ AMBIENTE = ENV['AMBIENTE']
 CONFIG = YAML.load_file(File.dirname(__FILE__) + "/ambientes/#{AMBIENTE}.yml")
 
 Capybara.register_driver :selenium_chrome do |app|
-  Selenium::WebDriver::Chrome::Service.driver_path = 'C:\Windows\chromedriver.exe'
+  #Selenium::WebDriver::Chrome::Service.driver_path = 'C:\Windows\chromedriver.exe'
   caps = Selenium::WebDriver::Remote::Capabilities.chrome
   $driver = Capybara::Selenium::Driver.new(app, { :browser => :chrome, desired_capabilities: caps })
 end
