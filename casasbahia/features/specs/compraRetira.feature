@@ -9,7 +9,7 @@ Funcionalidade: Compra pelo o Retira
   Contexto: que o usuário esteja logado
     Dado que o usuario esteja logado na home da bandeira
 
-  @realizar_compra_retira
+  @realizar_compra_retira @full_regression
   Esquema do Cenario: Realizar Compra Retira
     Quando busco pelo o "<produto>"
     E levo o sku retira com o "<cep>" até a página de pagamento
@@ -19,10 +19,10 @@ Funcionalidade: Compra pelo o Retira
     Exemplos:
       | produto  | cep      | 
       | 14817282 | 08040000 |
-      | 9863236  | 09520900 |
-      | 12369338 | 09520900 |
+    #  | 9863236  | 09520900 |
+    #  | 12369338 | 09520900 |
 
-  @realizar_compra_retira_com_seguro  
+  @realizar_compra_retira_com_seguro @full_regression
   Esquema do Cenario: Realizar Compra Retira com seguros
     Quando busco pelo o "<produto>"   
     E escolho o produto solicitando retirada no "<cep>"
@@ -35,7 +35,7 @@ Funcionalidade: Compra pelo o Retira
       | produto  | cep      | 
       | 12369338 | 09520900 |
     
-  @realizar_compra_retira_com_loja_especifica 
+  @realizar_compra_retira_com_loja_especifica @full_regression
   Esquema do Cenario: Realizar Compra Retira com loja especifica
       Quando busco pelo o "<produto>"
       E levo o sku retira com o "<cep>" e "<loja>" até a página de pagamento
@@ -45,7 +45,7 @@ Funcionalidade: Compra pelo o Retira
       Exemplos:
         |produto    |cep      |loja                                          |                      
         #|11235957	|'13318000' |Casas Bahia - Cabreúva|
-        |15341370	|'03066030' |Casas Bahia - Shopping Metrô Boulevard Tatuapé|
+        |15341370	|'03066030' |PontoFrio - Shopping Anália Franco|
 
 
   @alterar_compra_normal_para_retira

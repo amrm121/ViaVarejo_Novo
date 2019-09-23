@@ -20,4 +20,8 @@ module Pages
   def closepopup
     @closepopup ||= ClosePopup.new
   end
+
+  def modalretira
+    @modalretira ||= ModalRetira.new
+  end
 end

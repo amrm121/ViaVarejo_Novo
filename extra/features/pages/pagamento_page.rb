@@ -47,7 +47,7 @@ class Pagamento < SitePrism::Page
         bt_x_modal.click   
     end
 
-    def validar_carrinho_compra
+    def validar_carrinho_compra        
         wait_until_el_displayed(:xpath, '//h2[@ng-show="!compraFinalizadaCtrl.isReservaSite"]', seconds = 10)
         $msgObrigadoCarrinho = msg_obg_carrinho.text
         $resultMsgObrigadoCarrinho = 'Obrigado por comprar no Extra.com.br'                 

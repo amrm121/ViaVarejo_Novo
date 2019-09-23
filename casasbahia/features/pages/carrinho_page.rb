@@ -1,12 +1,7 @@
 class Carrinho < SitePrism::Page
   element :click_produto, '.nm-product-img-container'
   element :bt_retira, '#ctl00_Conteudo_ctl21_btnRetirarNaLoja'
-  element :bt_retira_modal_mais_opçoes, '#ctl00_Conteudo_ctl26_rptLojistas_ctl00_lnkRetira'
-  element :cp_cep, :xpath, '//div[@class="input-buscal-modal"]//child::input[@name="cep"]'
-  element :bt_LupaRetira, :xpath, '//div[@class="input-buscal-modal"]//child::input[@class="lupa-modal home"]'
-  element :click_loja_cb, :xpath, '//img[@src="https://www.casasbahia-imagens.com.br/App_Themes/CasasBahia/img/retira-facil/logo/CasasBahia.png"]'
-  element :loja_retira, '.detalhe-retirada-linha3-nome'
-  element :bt_retira_local, :xpath, '//a[@title="Retirar neste local"]//child::span[1]'
+  element :bt_retira_modal_mais_opçoes, '#ctl00_Conteudo_ctl26_rptLojistas_ctl00_lnkRetira'  
   element :bt_continuar_compra, '#btnRetira'
   element :md_carrinho, :xpath, '//div[@data-id="content"]'
   element :bt_concluir_compra, :xpath, '//div[@data-id="content"]//child::a[@data-isentregaincompativel="apenasRetira"]'
@@ -15,8 +10,7 @@ class Carrinho < SitePrism::Page
   element :valida_loja_retira, '#IdLojaFisicaSelecionado'
   element :check_garantia, :xpath, '//div[@class="extended-warranty"]//div[@class="plan-box option-01"]//span[@class="input-custom"]'
   element :check_seguro, :xpath, '//div[@class="keep-safe"]//div[@class="plan-box option-01"]//span[@class="input-custom"]'
-  element :title_carrinho, :xpath, '//section[@id="sectionContent"]//h2'
-  element :modalCep, '#TB_iframeContent'
+  element :title_carrinho, :xpath, '//section[@id="sectionContent"]//h2'  
   element :bt_compra, '#btnAdicionarCarrinho'
   element :cp_cep_carrinho, '#Cep'
   element :bt_fluxo_conlcluir_compra, :xpath, '//div[@class="concluirCompra"]//child::a[@title="Concluir compra"]'
@@ -52,51 +46,51 @@ class Carrinho < SitePrism::Page
     @result_titulo_cep = 'Informe o CEP desejado e consulte nossos Pontos de Retirada mais próximos'
   end
 
-  def inserir_retira_cep
-    within_frame(modalCep) do
-      cp_cep.set('08040000')
-      bt_LupaRetira.click
-    end
-  end
+#  def inserir_retira_cep
+#    within_frame(modalCep) do
+#      cp_cep.set('08040000')
+#      bt_LupaRetira.click
+#    end
+#  end
+#
+#  def obtem_msg_retira
+#    within_frame(modalCep) do
+#      wait_until_el_displayed(:css, '.aviso-filtro', 5)
+#      @msgretira = find('.aviso-filtro').text
+#      @resultmsgretira = 'O prazo de liberação da retirada passará a contar a partir do e-mail de confirmação do pagamento, e condicionado ao horário de funcionamento do ponto de retirada. Você receberá as orientações por e-mail.'
+#    end
+#  end
+#
+#  def select_loja_cb
+#    within_frame(modalCep) do
+#      first(:xpath, '//img[@src="https://www.casasbahia-imagens.com.br/App_Themes/CasasBahia/img/retira-facil/logo/CasasBahia.png"]').click
+#    end
+#  end
+#
+#  def obtem_loja_retira
+#      within_frame(modalCep) do            
+#          wait_until_el_displayed(:xpath, '//a[@title="Retirar neste local"]//child::span[1]', seconds = 5)
+#          @msg_aguarde_email = find('.detalhe-retirada-linha2-aviso-email').text            
+#          @result_msg_aguarde_email = 'Aguarde o e-mail com o nosso aviso que o produto esta pronto para retirada e verifique o horário de funcionamento do local escolhido abaixo.'
+#
+#          $lojaRetira = loja_retira.text
+#          $result_lojaRetira = $lojaRetira
+#      end
+#  end
+#
+#  def click_retira_local    
+#      within_frame(modalCep) do
+#          bt_retira_local.click
+#      end
+#  end
 
-  def obtem_msg_retira
-    within_frame(modalCep) do
-      wait_until_el_displayed(:css, '.aviso-filtro', 5)
-      @msgretira = find('.aviso-filtro').text
-      @resultmsgretira = 'O prazo de liberação da retirada passará a contar a partir do e-mail de confirmação do pagamento, e condicionado ao horário de funcionamento do ponto de retirada. Você receberá as orientações por e-mail.'
-    end
-  end
-
-  def select_loja_cb
-    within_frame(modalCep) do
-      first(:xpath, '//img[@src="https://www.casasbahia-imagens.com.br/App_Themes/CasasBahia/img/retira-facil/logo/CasasBahia.png"]').click
-    end
-  end
-
-  def obtem_loja_retira
-      within_frame(modalCep) do            
-          wait_until_el_displayed(:xpath, '//a[@title="Retirar neste local"]//child::span[1]', seconds = 5)
-          @msg_aguarde_email = find('.detalhe-retirada-linha2-aviso-email').text            
-          @result_msg_aguarde_email = 'Aguarde o e-mail com o nosso aviso que o produto esta pronto para retirada e verifique o horário de funcionamento do local escolhido abaixo.'
-
-          $lojaRetira = loja_retira.text
-          $result_lojaRetira = $lojaRetira
-      end
-  end
-
-  def click_retira_local    
-      within_frame(modalCep) do
-          bt_retira_local.click
-      end
-  end
-
-  def click_continuar_compra       
-      if page.has_selector?(:id, 'TB_iframeContent')
-          within_frame(modalCep) do            
-              bt_continuar_compra.click
-          end
-      end      
-  end
+#  def click_continuar_compra       
+#      if page.has_selector?(:id, 'TB_iframeContent')
+#          within_frame(modalCep) do            
+#              bt_continuar_compra.click
+#          end
+#      end      
+#  end
 
   def confirmar_compra
 
