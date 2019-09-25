@@ -26,6 +26,11 @@ class Carrinho < SitePrism::Page
   element :cb_bairro_retira, :xpath, "//select[@name='filtroLojaBairro']"
     element :opcao_bairro_retira, :xpath, "//select[@name='filtroLojaBairro']//child::option[2]"
     element :opcao1_bairro_retira, :xpath, "//select[@name='filtroLojaBairro']//child::option[1]"
+  element :cp_informe_cep, '.maskCEP'
+  element :bt_cacula_frete_prazo, '#btnCalculoFrete'
+  element :txt_entrega_retira, '#ctl00_Conteudo_ctl33_rptTipoEntregaFrete_ctl03_lblEnderecoEntrega'
+  element :txt_tempo_entrega, '#ctl00_Conteudo_ctl33_rptTipoEntregaFrete_ctl03_lblDeliveryTime'
+  element :txt_frete_retira,'#ctl00_Conteudo_ctl33_rptTipoEntregaFrete_ctl03_lblValue'
 
   def obter_produto
     wait_until_el_displayed(:css, '.nm-search-results-container', 5)
@@ -45,52 +50,6 @@ class Carrinho < SitePrism::Page
     @titulo_inf_cep = find(:xpath, "//div[@class ='chamada-modal']").text
     @result_titulo_cep = 'Informe o CEP desejado e consulte nossos Pontos de Retirada mais próximos'
   end
-
-#  def inserir_retira_cep
-#    within_frame(modalCep) do
-#      cp_cep.set('08040000')
-#      bt_LupaRetira.click
-#    end
-#  end
-#
-#  def obtem_msg_retira
-#    within_frame(modalCep) do
-#      wait_until_el_displayed(:css, '.aviso-filtro', 5)
-#      @msgretira = find('.aviso-filtro').text
-#      @resultmsgretira = 'O prazo de liberação da retirada passará a contar a partir do e-mail de confirmação do pagamento, e condicionado ao horário de funcionamento do ponto de retirada. Você receberá as orientações por e-mail.'
-#    end
-#  end
-#
-#  def select_loja_cb
-#    within_frame(modalCep) do
-#      first(:xpath, '//img[@src="https://www.casasbahia-imagens.com.br/App_Themes/CasasBahia/img/retira-facil/logo/CasasBahia.png"]').click
-#    end
-#  end
-#
-#  def obtem_loja_retira
-#      within_frame(modalCep) do            
-#          wait_until_el_displayed(:xpath, '//a[@title="Retirar neste local"]//child::span[1]', seconds = 5)
-#          @msg_aguarde_email = find('.detalhe-retirada-linha2-aviso-email').text            
-#          @result_msg_aguarde_email = 'Aguarde o e-mail com o nosso aviso que o produto esta pronto para retirada e verifique o horário de funcionamento do local escolhido abaixo.'
-#
-#          $lojaRetira = loja_retira.text
-#          $result_lojaRetira = $lojaRetira
-#      end
-#  end
-#
-#  def click_retira_local    
-#      within_frame(modalCep) do
-#          bt_retira_local.click
-#      end
-#  end
-
-#  def click_continuar_compra       
-#      if page.has_selector?(:id, 'TB_iframeContent')
-#          within_frame(modalCep) do            
-#              bt_continuar_compra.click
-#          end
-#      end      
-#  end
 
   def confirmar_compra
 
@@ -202,5 +161,20 @@ class Carrinho < SitePrism::Page
     end
     
     $result_lojaRetira = valida_loja_retira.text
+  end
+
+  def detalheproduto_tela_pesquisa_cep(cep)
+    cp_informe_cep.set cep
+    bt_cacula_frete_prazo.click
+  end
+
+  def detalheproduto_tela_resultado_pesquisa_cep    
+    wait_until_el_displayed(:xpath, "//tr[@class='shippingOptionGrp retira rápido']", 10)    
+    $entrega_retira = txt_entrega_retira.text
+    $tempo_retira = txt_tempo_entrega.text
+    $frete_retira = txt_frete_retira.text
+    $msg_entrega_retira = 'Retira Rápido'
+    $msg_frete_retira = 'Grátis'
+    $tempo_retira_tratado = $tempo_retira.gsub('A partir de ','Retire em ')
   end
 end

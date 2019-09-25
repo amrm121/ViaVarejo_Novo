@@ -71,3 +71,19 @@ Quando('altero a forma de entrega para a opção Retira') do
   step 'altero a opcao de entrega para retira'
   step 'seleciona os combos do retira rápido'
 end
+
+Quando('calculo o frete com prazo de entrega informando o {string}') do |cep|
+  step 'o usuario seleciona um produto no retorno da pesquisa'  
+  step "pesquisa o '#{cep}' no campo Informe seu Cep"  
+  step 'valida se existe o Retira Rapido no retorno da pesquisa'
+end  
+
+Quando("em seguida efetuo uma busca do mesmo sku no modal retira informando o mesmo {string}") do |cep|
+  step 'clica no botão Retira Rápido'
+  step "pesquisa pelo '#{cep}' no modal retira"
+end                                                                            
+                                                                               
+Então('as informação de quantidade de horas do modal retira devem corresponde com o do calcula frete e prazo') do
+  modalretira.lista_lojas_depara_pesquisas
+  expect($retorno_lista_resultado_loja).to have_text($tempo_retira_tratado)  
+end

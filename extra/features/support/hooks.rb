@@ -9,8 +9,8 @@ end
 World(Pages, Helper, Commons)
 
 Before do
-  Capybara.current_session.driver.browser.manage.delete_all_cookies
-  Capybara.current_session.current_window.resize_to(1380, 720)
+  Capybara.current_session.driver.browser.manage.delete_all_cookies  
+  Capybara.page.driver.browser.manage.window.maximize
 end
 
 After do |scenario|

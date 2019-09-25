@@ -18,9 +18,9 @@ Funcionalidade: Compra pelo o Retira
 
     Exemplos:
       | produto  | cep      | 
-      | 14817282 | 08040000 |
-    #  | 9863236  | 09181140 |
-    #  | 12369338 | 9520900  |
+      | 9600908  | 01311200 |
+      | 12639587 | 08040000 |
+      | 4168904  | 01311200 |
 
   @realizar_compra_retira_com_seguro @full_regression
   Esquema do Cenário: Realizar Compra Retira com seguros
@@ -57,4 +57,15 @@ Funcionalidade: Compra pelo o Retira
 
     Exemplos:
       | produto  | cep        | 
-      | 15077085 | '09520125' |  
+      | 15077085 | '09520125' | 
+
+  @valida_frete_prazo_entrega @full_regression
+  Esquema do Cenario: Valida frete com prazo de entrega com o modal retira rapido
+    Quando busco pelo o "<produto>"
+    E calculo o frete com prazo de entrega informando o "<cep>"
+    E em seguida efetuo uma busca do mesmo sku no modal retira informando o mesmo "<cep>"
+    Então as informação de quantidade de horas do modal retira devem corresponde com o do calcula frete e prazo
+
+    Exemplos:
+      | produto  | cep      | 
+      | 14817287 | 01311200 |       

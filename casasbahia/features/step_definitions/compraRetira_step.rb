@@ -1,4 +1,4 @@
-Dado('que o usuario esteja logado na home da bandeira') do
+﻿Dado('que o usuario esteja logado na home da bandeira') do
   step 'que o usuário esteja na página home da bandeira'
   step 'que o usuário acesse a página de Autenticação'
   step 'informa dos dados da Autenticação'
@@ -80,9 +80,9 @@ Então('levo o sku retira com o {string} até o modal que confirma a retirada no
   step 'o usuario seleciona um produto no retorno da pesquisa'  
   step 'clica no botão Retira Rápido'  
   
-  within_frame(carrinho.modalCep) do
-    carrinho.cp_cep.set cep
-    carrinho.bt_LupaRetira.click    
+  within_frame(modalretira.modalCep) do
+    modalretira.cp_cep.set cep
+    modalretira.bt_LupaRetira.click    
     find(:xpath, "//a[@href='javascript:void(0);']//strong[contains(text(), '840 m')]").click
     sleep 1
     @loja = find('.detalhe-retirada-linha3-nome').text
@@ -91,3 +91,20 @@ Então('levo o sku retira com o {string} até o modal que confirma a retirada no
   end    
   puts  "Loja Encontrada'"
 end
+
+
+Quando('calculo o frete com prazo de entrega informando o {string}') do |cep|
+  step 'o usuario seleciona um produto no retorno da pesquisa'  
+  step "pesquisa o '#{cep}' no campo Informe seu Cep"  
+  step 'valida se existe o Retira Rapido no retorno da pesquisa'
+end  
+
+Quando("em seguida efetuo uma busca do mesmo sku no modal retira informando o mesmo {string}") do |cep|
+  step 'clica no botão Retira Rápido'
+  step "pesquisa pelo '#{cep}' no modal retira"
+end                                                                            
+                                                                               
+Então('as informação de quantidade de horas do modal retira devem corresponde com o do calcula frete e prazo') do
+  modalretira.lista_lojas_depara_pesquisas
+  expect($retorno_lista_resultado_loja).to have_text($tempo_retira_tratado)  
+end                                                                            

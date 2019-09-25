@@ -80,3 +80,16 @@ E('seleciona os combos do retira rápido') do
   carrinho.endereco_tela_preencher_local_retira
   carrinho.confirma_endereco
 end
+
+E('pesquisa o {string} no campo Informe seu Cep') do |cep| 
+  closepopup.tela_busca 
+  carrinho.detalheproduto_tela_pesquisa_cep(cep)
+end
+
+E('valida se existe o Retira Rapido no retorno da pesquisa') do
+  sleep 2
+  closepopup.tela_busca   
+  carrinho.detalheproduto_tela_resultado_pesquisa_cep
+  expect($entrega_retira).to eql $msg_entrega_retira
+  expect($frete_retira).to eql $msg_frete_retira
+end

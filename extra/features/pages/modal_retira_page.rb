@@ -5,6 +5,7 @@
     element :loja_retira, '.detalhe-retirada-linha3-nome'
     element :bt_retira_local, :xpath, '//a[@title="Retirar neste local"]//child::span[1]'
     element :modalCep, '#TB_iframeContent'
+    element :lista_resultado_loja, '.lista-resultado-estabelecimento'    
 
     def inserir_retira_cep(cep)
       within_frame(modalCep) do
@@ -49,4 +50,10 @@
         $loja_click = loja                
       end  
     end
+
+    def lista_lojas_depara_pesquisas            
+      within_frame(modalCep) do        
+        $retorno_lista_resultado_loja = lista_resultado_loja.text
+      end
+    end    
 end

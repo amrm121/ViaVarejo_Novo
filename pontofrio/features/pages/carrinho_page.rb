@@ -24,6 +24,11 @@ class Carrinho < SitePrism::Page
   element :cb_bairro_retira, :xpath, "//select[@name='filtroLojaBairro']"
     element :opcao_bairro_retira, :xpath, "//select[@name='filtroLojaBairro']//child::option[2]"
     element :opcao1_bairro_retira, :xpath, "//select[@name='filtroLojaBairro']//child::option[1]"
+  element :cp_informe_cep, '.maskCEP'
+  element :bt_cacula_frete_prazo, '#btnCalculoFrete'
+  element :txt_entrega_retira, '#ctl00_Conteudo_ctl31_rptTipoEntregaFrete_ctl03_lblEnderecoEntrega'
+  element :txt_tempo_entrega, '#ctl00_Conteudo_ctl31_rptTipoEntregaFrete_ctl03_lblDeliveryTime'
+  element :txt_frete_retira,'#ctl00_Conteudo_ctl31_rptTipoEntregaFrete_ctl03_lblValue'  
 
   def obter_produto
     wait_until_el_displayed(:css, '.nm-search-results-container', 5)
@@ -144,5 +149,20 @@ class Carrinho < SitePrism::Page
     end
     
     $result_lojaRetira = valida_loja_retira.text
+  end
+
+  def detalheproduto_tela_pesquisa_cep(cep)
+    cp_informe_cep.set cep
+    bt_cacula_frete_prazo.click
+  end
+  
+  def detalheproduto_tela_resultado_pesquisa_cep    
+    wait_until_el_displayed(:xpath, "//tr[@class='shippingOptionGrp retira rápido']", 10)    
+    $entrega_retira = txt_entrega_retira.text
+    $tempo_retira = txt_tempo_entrega.text
+    $frete_retira = txt_frete_retira.text
+    $msg_entrega_retira = 'Retira Rápido'
+    $msg_frete_retira = 'Grátis'
+    $tempo_retira_tratado = $tempo_retira.gsub('A partir de ','Retire em ')
   end
 end

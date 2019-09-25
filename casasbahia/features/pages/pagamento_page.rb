@@ -47,13 +47,13 @@ class Pagamento < SitePrism::Page
     end
 
     def validar_carrinho_compra      
-        wait_until_el_displayed(:xpath, '//h2[@ng-show="!compraFinalizadaCtrl.isReservaSite"]', seconds = 5)
+        wait_until_el_displayed(:xpath, '//h2[@ng-show="!compraFinalizadaCtrl.isReservaSite"]', seconds = 15)
         $msgObrigadoCarrinho = msg_obg_carrinho.text
         $resultMsgObrigadoCarrinho = 'Obrigado por comprar na CasasBahia.com.br'                 
     end
 
-    def validar_localRetirada        
+    def validar_localRetirada
+        wait_until_el_displayed(:xpath, '//td[@ng-bind="compraFinalizadaCtrl.ResumoCompra.Endereco.nomeDestinatario"]', seconds = 15)
         $localRetirada = cp_local_retirada.text
     end
-
 end 
