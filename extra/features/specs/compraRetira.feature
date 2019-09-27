@@ -67,5 +67,17 @@ Funcionalidade: Compra pelo o Retira
     Então as informação de quantidade de horas do modal retira devem corresponde com o do calcula frete e prazo
 
     Exemplos:
-      | produto  | cep      | 
-      | 14817287 | 01311200 |       
+      | produto  | cep      |
+      | 14817287 | 01311200 |
+
+  @realizar_compra_retira_pagina_lojista @full_regression
+  Esquema do Cenario: Realizar Compra Retira através da página do lojista
+    Quando busco pelo o "<produto>"
+    E levo o produto até a página do lojista
+    E prossigo com a compra até a página de pagamento através do serviço Retira Rápido informando o "<cep>"
+    E finalizo a compra
+    Então confirmo que o número do pedido foi apresentado
+
+    Exemplos:
+      | produto  | cep      |
+      | 14817287 | 01311200 |

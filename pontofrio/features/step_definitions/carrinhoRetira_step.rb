@@ -90,3 +90,13 @@ E('valida se existe o Retira Rapido no retorno da pesquisa') do
   expect($entrega_retira).to eql $msg_entrega_retira
   expect($frete_retira).to eql $msg_frete_retira
 end
+
+E('clica no botão + opções') do
+  closepopup.tela_busca
+  carrinho.detalheproduto_tela_botao_mais_opcao
+end
+
+E('na pagina do lojista clica no botao Retirar') do
+  closepopup.tela_busca  
+  carrinho.paginalojista_tela_botao_retirar
+end

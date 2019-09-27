@@ -107,4 +107,18 @@ end
 Então('as informação de quantidade de horas do modal retira devem corresponde com o do calcula frete e prazo') do
   modalretira.lista_lojas_depara_pesquisas
   expect($retorno_lista_resultado_loja).to have_text($tempo_retira_tratado)  
-end                                                                            
+end      
+
+Quando('levo o produto até a página do lojista') do
+  step 'o usuario seleciona um produto no retorno da pesquisa'
+  step 'clica no botão + opções'
+end  
+
+Quando('prossigo com a compra até a página de pagamento através do serviço Retira Rápido informando o {string}') do |cep|
+  step 'na pagina do lojista clica no botao Retirar'
+  step "pesquisa pelo '#{cep}' no modal retira"
+  step 'clica na loja que efetuar a retirada do produto'
+  step 'clica no botão Retira no Local'
+  step 'clica no botão Concluir compra'
+  step 'confirmar o endereço pressionando o botão Concluir'
+end

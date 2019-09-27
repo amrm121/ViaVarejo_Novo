@@ -28,7 +28,9 @@ class Carrinho < SitePrism::Page
   element :bt_cacula_frete_prazo, '#btnCalculoFrete'
   element :txt_entrega_retira, '#ctl00_Conteudo_ctl31_rptTipoEntregaFrete_ctl03_lblEnderecoEntrega'
   element :txt_tempo_entrega, '#ctl00_Conteudo_ctl31_rptTipoEntregaFrete_ctl03_lblDeliveryTime'
-  element :txt_frete_retira,'#ctl00_Conteudo_ctl31_rptTipoEntregaFrete_ctl03_lblValue'  
+  element :txt_frete_retira,'#ctl00_Conteudo_ctl31_rptTipoEntregaFrete_ctl03_lblValue'
+  element :bt_mais_opcao, '#ctl00_Conteudo_ctl11_lnkMaisOpcoes'
+  element :bt_retirar_lojista, '#ctl00_Conteudo_rptLojistas_ctl00_popRetirar'
 
   def obter_produto
     wait_until_el_displayed(:css, '.nm-search-results-container', 5)
@@ -164,5 +166,14 @@ class Carrinho < SitePrism::Page
     $msg_entrega_retira = 'Retira Rápido'
     $msg_frete_retira = 'Grátis'
     $tempo_retira_tratado = $tempo_retira.gsub('A partir de ','Retire em ')
+  end
+
+  def detalheproduto_tela_botao_mais_opcao    
+    bt_mais_opcao.click
+  end
+
+  def paginalojista_tela_botao_retirar    
+    wait_until_el_displayed(:id, 'ctl00_Conteudo_rptLojistas_ctl00_popRetirar', 10)    
+    bt_retirar_lojista.click
   end
 end
