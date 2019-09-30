@@ -9,9 +9,8 @@ end
 Quando('busco pelo o {string}') do |produto|
   sleep 2
   closepopup.tela_busca
-  pesquisa.cp_pesquisa.set produto
-  pesquisa.bt_busca.click
-end 
+  pesquisa.pesquisa_tela_produto(produto)
+end
 
 Quando('levo o sku retira com o {string} até a página de pagamento') do |cep|
   step 'o usuario seleciona um produto no retorno da pesquisa'
