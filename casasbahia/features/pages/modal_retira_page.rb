@@ -6,6 +6,7 @@
     element :bt_retira_local, :xpath, '//a[@title="Retirar neste local"]//child::span[1]'
     element :modalCep, '#TB_iframeContent'
     element :lista_resultado_loja, '.lista-resultado-estabelecimento'
+    element :bt_lupa_busca_cep, '.lupa-modal'
 
     def inserir_retira_cep(cep)
       within_frame(modalCep) do
@@ -22,9 +23,18 @@
       end
     end
 
-    def select_loja_cb
-      within_frame(modalCep) do
-        first(:xpath, '//img[@src="https://www.casasbahia-imagens.com.br/App_Themes/CasasBahia/img/retira-facil/logo/CasasBahia.png"]').click
+    def select_loja_cb      
+      count = 0
+      begin
+        within_frame(modalCep) do
+          first(:xpath, '//img[@src="https://www.casasbahia-imagens.com.br/App_Themes/CasasBahia/img/retira-facil/logo/CasasBahia.png"]').click      
+        end
+      rescue Capybara::ElementNotFound
+        within_frame(modalCep) do
+          bt_lupa_busca_cep.click
+        end
+          count += 1
+          count < 3 ? retry : raise('Lojas nao listadas no modal retira rapido')      
       end
     end
 

@@ -21,17 +21,17 @@ class Pagamento < SitePrism::Page
         wait_until_el_displayed(:id, 'NrCartao', seconds = 5)
     end
 
-        def preencher_dados_cartao
-            sleep 02        
-            cp_cartao.set           '5448923448597759'
-            cp_dt_validade_mes.click
-                sl_dt_validade_mes.click
-            cp_dt_validade_ano.click
-                sl_dt_validade_ano.click
-            cp_nome_cartao.set      'Automação de Teste'
-            cp_cod_seguranca.set    '691'  
-            cp_qtd_parcelas.set     '5'
-        end
+    def preencher_dados_cartao
+        sleep 02        
+        cp_cartao.set           '5448923448597759'
+        cp_dt_validade_mes.click
+            sl_dt_validade_mes.click
+        cp_dt_validade_ano.click
+            sl_dt_validade_ano.click
+        cp_nome_cartao.set      'Automação de Teste'
+        cp_cod_seguranca.set    '691'  
+        cp_qtd_parcelas.set     '5'
+    end
     
     def confirmar_pagamento
         bt_concluir_compra.click
@@ -46,10 +46,18 @@ class Pagamento < SitePrism::Page
         $resultmsgCpConcluida = 'Sua compra foi concluída!'                            
     end
 
-    def validar_carrinho_compra      
-        wait_until_el_displayed(:xpath, '//h2[@ng-show="!compraFinalizadaCtrl.isReservaSite"]', seconds = 15)
-        $msgObrigadoCarrinho = msg_obg_carrinho.text
-        $resultMsgObrigadoCarrinho = 'Obrigado por comprar na CasasBahia.com.br'                 
+    def validar_carrinho_compra
+        count = 0
+        binding.pry
+        begin      
+          wait_until_el_displayed(:xpath, '//h2[@ng-show="!compraFinalizadaCtrl.isReservaSite"]', seconds = 15)
+          $msgObrigadoCarrinho = msg_obg_carrinho.text
+          $resultMsgObrigadoCarrinho = 'Obrigado por comprar na CasasBahia.com.br'
+        rescue Capybara::ElementNotFound
+          page.refresh  
+          count += 1
+          count < 3 ? retry : raise('Comprovante nao disponibilizado em tela!')
+        end
     end
 
     def validar_localRetirada
