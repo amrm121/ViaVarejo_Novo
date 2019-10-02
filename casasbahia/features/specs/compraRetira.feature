@@ -18,9 +18,9 @@ Funcionalidade: Compra pelo o Retira
 
     Exemplos:
       | produto  | cep      | 
-      | 9600908  | 01311200 |
+      #| 9600908  | 01311200 |
       | 12639587 | 08040000 |
-      | 4168904  | 01311200 |
+      #| 4168904  | 01311200 |
 
   @realizar_compra_retira_com_seguro @full_regression
   Esquema do Cenario: Realizar Compra Retira com seguros

@@ -18,11 +18,12 @@ class Pagamento < SitePrism::Page
     
     def select_pagamento_cartao
         opcao_cartao.click
-        wait_until_el_displayed(:id, 'NrCartao', seconds = 5)        
+        wait_until_el_displayed(:id, 'NrCartao', seconds = 5)
     end
 
     def preencher_dados_cartao
-        sleep 02        
+        sleep 02
+        wait_until_el_displayed(:id, 'NrCartao', seconds = 5)
         cp_cartao.set           '5448923448597759'
         cp_dt_validade_mes.click
             sl_dt_validade_mes.click
