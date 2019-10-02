@@ -65,6 +65,8 @@ E('clica no botao Comprar') do
 end
 
 E('informa o {string} na tela do carrinho') do |cep|
+  sleep 2
+  closepopup.tela_carrinho
   carrinho.informa_cep_no_carrinho(cep)
 end
 

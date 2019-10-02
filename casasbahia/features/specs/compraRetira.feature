@@ -58,7 +58,7 @@ Funcionalidade: Compra pelo o Retira
 
     Exemplos:
       | produto  | cep      | 
-      | 15077085 | 09520125 |   
+      | 15077085 | '09520125' |   
 
   @valida_frete_prazo_entrega @full_regression
   Esquema do Cenario: Valida frete com prazo de entrega com o modal retira rapido

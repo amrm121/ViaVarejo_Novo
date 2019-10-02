@@ -75,7 +75,8 @@ class Carrinho < SitePrism::Page
     page.execute_script('arguments[0].scrollIntoView();', bt_concluir_end)
     sleep 2      
     bt_concluir_end.click
-    #bt_concluir_end.click
+    sleep 1
+    bt_concluir_end.click if page.has_selector?(:id, 'btSelecionarPagamento2')
 
     wait_until_el_displayed(:xpath, '//div[@class="SubtituloPayment"]//child::p[@class="subtitulo"]', seconds = 5)
     @titulo_pagamento = find(:xpath, '//div[@class="SubtituloPayment"]//child::p[@class="subtitulo"]')        
@@ -93,28 +94,16 @@ class Carrinho < SitePrism::Page
   end
 
   def informa_cep_no_carrinho(cep)
-
     @get_title_button = first(:xpath, '//section[@id="sectionContent"]//h2').text
-
-    if @get_title_button == "Muito mais proteção para os seus produtos!"
-        first(:xpath, '//a[@data-id="btnContinuar"]').click
-        wait_until_el_displayed(:xpath, '//div[@class="concluirCompra"]//child::a[@title="Concluir compra"]', seconds = 5)
-        cp_cep_carrinho.set cep
-        bt_consultar_cep.click
-        wait_until_el_displayed(:xpath, '//div[@class="concluirCompra"]//child::a[@title="Concluir compra"]', seconds = 5)
-        sleep 1
-        page.execute_script('arguments[0].scrollIntoView();', bt_fluxo_conlcluir_compra)
-        sleep 2
-        bt_fluxo_conlcluir_compra.click      
-    else 
-        cp_cep_carrinho.set cep
-        bt_consultar_cep.click
-        wait_until_el_displayed(:xpath, '//div[@class="concluirCompra"]//child::a[@title="Concluir compra"]', seconds = 5)
-        sleep 1
-        page.execute_script('arguments[0].scrollIntoView();', bt_fluxo_conlcluir_compra)
-        sleep 2
-        bt_fluxo_conlcluir_compra.click
-    end
+    first(:xpath, '//a[@data-id="btnContinuar"]').click if @get_title_button == "Muito mais proteção para os seus produtos!"
+        
+    wait_until_el_displayed(:xpath, '//div[@class="concluirCompra"]//child::a[@title="Concluir compra"]', seconds = 5)
+    cp_cep_carrinho.set cep
+    bt_consultar_cep.click
+    sleep 1
+    page.execute_script('arguments[0].scrollIntoView();', bt_fluxo_conlcluir_compra)
+    sleep 1
+    bt_fluxo_conlcluir_compra.click      
   end
 
   def endereco_tela_valida_entrega_nao_retira

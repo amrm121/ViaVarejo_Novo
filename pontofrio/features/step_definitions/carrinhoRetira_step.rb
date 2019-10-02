@@ -28,7 +28,7 @@ end
 
 E('clica no botão Concluir compra') do
   sleep 2
-  closepopup.tela_carrinho
+  closepopup.tela_carrinho  
   carrinho.confirmar_compra
   carrinho.valida_dados_entrega
   expect(@titulo_end_entrega).to eql @result_titulo_end_entrega
@@ -61,7 +61,9 @@ E('clica no botao Comprar') do
   carrinho.click_bt_compra  
 end
 
-E("informa o {string} na tela do carrinho") do |cep|
+E('informa o {string} na tela do carrinho') do |cep|
+  sleep 2
+  closepopup.tela_carrinho
   carrinho.informa_cep_no_carrinho(cep)
 end
 

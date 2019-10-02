@@ -48,7 +48,6 @@ class Pagamento < SitePrism::Page
 
     def validar_carrinho_compra
         count = 0
-        binding.pry
         begin      
           wait_until_el_displayed(:xpath, '//h2[@ng-show="!compraFinalizadaCtrl.isReservaSite"]', seconds = 15)
           $msgObrigadoCarrinho = msg_obg_carrinho.text
