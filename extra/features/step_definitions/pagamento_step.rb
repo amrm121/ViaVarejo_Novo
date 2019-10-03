@@ -8,8 +8,8 @@ E('confirma os dados pressionando o botão concluir') do
 end
 
 E('valida se a compra foi realizada com sucesso') do
-  sleep 3
-  closepopup.tela_compra_concluida
+  sleep 3  
+  closepopup.tela_carrinho
   pagamento.validar_carrinho_compra
   expect($msgObrigadoCarrinho).to eql $resultMsgObrigadoCarrinho
   pagamento.validar_localRetirada  

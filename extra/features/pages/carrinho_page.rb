@@ -48,8 +48,7 @@ class Carrinho < SitePrism::Page
     @result_titulo_cep = 'Informe o CEP desejado e consulte nossos Pontos de Retirada mais próximos'
   end
 
-  def confirmar_compra
-    sleep 2
+  def confirmar_compra    
     @get_title_button = first(:xpath, '//section[@id="sectionContent"]//h2').text
     first(:xpath, '//a[@data-id="linkNaoObrigado"]').click if @get_title_button == 'Já pensou em proteger seu produto por muito mais tempo?'
     wait_until_el_displayed(:xpath, '//div[@data-id="content"]//child::a[@data-isentregaincompativel="apenasRetira"]', 5)

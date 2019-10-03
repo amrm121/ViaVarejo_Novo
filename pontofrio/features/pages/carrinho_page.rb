@@ -49,10 +49,8 @@ class Carrinho < SitePrism::Page
 
   def confirmar_compra
     @get_title_button = first(:xpath, '//section[@id="sectionContent"]//h2').text
-    if @get_title_button == 'Muito mais proteção para os seus produtos!'
-      first(:xpath, '//a[@data-id="btnContinuar"]').click
-      wait_until_el_displayed(:xpath, '//div[@data-id="content"]//child::a[@data-isentregaincompativel="apenasRetira"]', 5)
-    end
+    first(:xpath, '//a[@data-id="btnContinuar"]').click if @get_title_button == 'Muito mais proteção para os seus produtos!'
+    wait_until_el_displayed(:xpath, '//div[@data-id="content"]//child::a[@data-isentregaincompativel="apenasRetira"]', 5)    
     bt_concluir_compra.click
   end
 
