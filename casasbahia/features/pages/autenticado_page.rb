@@ -5,7 +5,6 @@ class Autenticacao < SitePrism::Page
   element :bt_confirmaLogin, '#btnClienteLogin'
   element :logado, '#lblLoginMsg'
   element :link_remover, :xpath, '//a[@data-id="lnkRemover"]'
-  # element :status_cestaVazia, '.cestaVazia'
   element :qtd_carrinho, '#itensCarrinho'
 
   def click_login_page
@@ -28,8 +27,15 @@ class Autenticacao < SitePrism::Page
 
     unless @qtd_carrinho == ''
       visit 'https://carrinho.casasbahia.com.br/'
-      link_remover.click            
-      wait_until_el_displayed(:xpath, '//a[@class="bt btContinuar"]', 10)
+      count = 0
+      first(:xpath, '//a[@data-id="lnkRemover"]').click      
+      begin        
+        wait_until_el_displayed(:xpath, '//a[@class="bt btContinuar"]', seconds = 2)
+      rescue  Capybara::ElementNotFound
+        first(:xpath, '//a[@data-id="lnkRemover"]').click
+        count += 1
+        count < 3 ? retry : raise('produto removido do carrinho')        
+      end     
       visit 'https://www.casasbahia.com.br/' 
     end
   end

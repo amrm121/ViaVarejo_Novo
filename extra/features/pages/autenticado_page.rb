@@ -28,8 +28,15 @@ class Autenticacao < SitePrism::Page
 
     unless @qtd_carrinho == ''
       visit 'https://carrinho.extra.com.br/'
-      link_remover.click
-      wait_until_el_displayed(:xpath, '//a[@class="bt btContinuar"]', 10)
+      count = 0
+      first(:xpath, '//a[@data-id="lnkRemover"]').click      
+      begin        
+        wait_until_el_displayed(:xpath, '//a[@class="bt btContinuar"]', seconds = 2)
+      rescue  Capybara::ElementNotFound
+        first(:xpath, '//a[@data-id="lnkRemover"]').click
+        count += 1
+        count < 3 ? retry : raise('produto removido do carrinho')        
+      end     
       visit 'https://www.extra.com.br/'
     end
   end
