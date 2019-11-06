@@ -121,3 +121,19 @@ Quando('prossigo com a compra até a página de pagamento através do serviço R
   step 'clica no botão Concluir compra'
   step 'confirmar o endereço pressionando o botão Concluir'
 end
+
+Quando('altero a forma de entrega para a opção Retira {string} {string} {string} {string} {string}') do |estado, regiao, cidade, bairro, loja|  
+  step 'altero a opcao de entrega para retira'
+  step "seleciona os combos do retira rapido '#{estado}' '#{regiao}' '#{cidade}' '#{bairro}' '#{loja}'"
+end
+
+Quando('seleciona os combos do retira rapido {string} {string} {string} {string} {string}') do |estado, regiao, cidade, bairro, loja|
+  carrinho.endereco_tela_preencher_local_retira_tempo(estado, regiao, cidade, bairro, loja)
+end
+
+Então('verifica que o tempo de retirada do produto na loja e de {string}') do |tempo_de_retirada|
+  carrinho.endereco_tela_valida_tempo_retira
+  expect("#{tempo_de_retirada}").to eql $tempo_retira_retorno
+  sleep 2
+  puts $tempo_retira_retorno
+end
