@@ -33,6 +33,7 @@ class Carrinho < SitePrism::Page
   element :txt_frete_retira,'#ctl00_Conteudo_ctl33_rptTipoEntregaFrete_ctl03_lblValue'
   element :bt_mais_opcao, '#ctl00_Conteudo_ctl26_lnkMaisOpcoes'
   element :bt_retirar_lojista, '#ctl00_Conteudo_rptLojistas_ctl00_popRetirar'
+  element :tempo_retira_carrinho, '.period'
 
   def obter_produto
     wait_until_el_displayed(:css, '.nm-search-results-container', 5)
@@ -100,6 +101,9 @@ class Carrinho < SitePrism::Page
     @get_title_button = first(:xpath, '//section[@id="sectionContent"]//h2').text
     first(:xpath, '//a[@data-id="btnContinuar"]').click if @get_title_button == "Muito mais proteção para os seus produtos!"
     wait_until_el_displayed(:xpath, '//div[@class="concluirCompra"]//child::a[@title="Concluir compra"]', seconds = 5)
+    sleep 1
+    page.execute_script('arguments[0].scrollIntoView();', cp_cep_carrinho)
+    sleep 1
     cp_cep_carrinho.set cep
     bt_consultar_cep.click    
     wait_until_el_displayed(:xpath, '//div[@class="concluirCompra"]//child::a[@title="Concluir compra"]', seconds = 5)
@@ -166,5 +170,27 @@ class Carrinho < SitePrism::Page
   def paginalojista_tela_botao_retirar    
     wait_until_el_displayed(:id, 'ctl00_Conteudo_rptLojistas_ctl00_popRetirar', 10)    
     bt_retirar_lojista.click
+  end
+
+  def endereco_tela_preencher_local_retira_tempo(estado, regiao, cidade, bairro, loja)
+    wait_until_el_displayed(:xpath, "//select[@name='filtroLojaEstado']", 5)        
+    find("option[value='#{estado}']").select_option
+    
+    wait_until_el_displayed(:xpath, "//select[@name='filtroLojaRegiao']", 5)
+    find("option[value='#{regiao}']").select_option
+
+    wait_until_el_displayed(:xpath, "//select[@name='filtroLojaCidade']", 5)
+    find("option[value='#{cidade}']").select_option
+
+    wait_until_el_displayed(:xpath, "//select[@name='filtroLojaBairro']", 5)
+    find("option[value='#{bairro}']").select_option
+
+    wait_until_el_displayed(:id, 'IdLojaFisicaSelecionado', 5)
+    find(:xpath, "//option[contains(text(), '#{loja}')]").select_option
+  end
+
+  def endereco_tela_valida_tempo_retira
+    wait_until_el_displayed(:css, '.period', 5)    
+    $tempo_retira_retorno = tempo_retira_carrinho.text
   end
 end
