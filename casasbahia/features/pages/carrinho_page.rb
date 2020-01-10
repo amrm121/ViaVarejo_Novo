@@ -97,7 +97,7 @@ class Carrinho < SitePrism::Page
     bt_compra.click
   end
 
-  def informa_cep_no_carrinho(cep)
+  def informa_cep_no_carrinho(cep)    
     @get_title_button = first(:xpath, '//section[@id="sectionContent"]//h2').text
     first(:xpath, '//a[@data-id="btnContinuar"]').click if @get_title_button == "Muito mais proteção para os seus produtos!"
     wait_until_el_displayed(:xpath, '//div[@class="concluirCompra"]//child::a[@title="Concluir compra"]', seconds = 5)
@@ -119,7 +119,9 @@ class Carrinho < SitePrism::Page
     @formaEntrega != 'Retira Rápido'
   end
 
-  def endereco_tela_seleciona_checkbox_retira    
+  def endereco_tela_seleciona_checkbox_retira
+    sleep 2
+    wait_until_el_displayed(:xpath, "//p[@class='grp tEntrega pickup on']//child::input[@value='12']", 5)
     checkbox_retira_rapido.click    
     @formaEntregaRetira = forma_entrega.text
     @formaEntrega = 'Retira Rápido'
@@ -172,19 +174,25 @@ class Carrinho < SitePrism::Page
     bt_retirar_lojista.click
   end
 
+  def endereco_tela_seleciona_endereco(endereco_tipo)
+    wait_until_el_displayed(:id, 'IdClienteEnderecoSelecionado', 5)    
+    find(:xpath, "//option[contains(text(), '#{endereco_tipo}')]").select_option
+  end
+
   def endereco_tela_preencher_local_retira_tempo(estado, regiao, cidade, bairro, loja)
     wait_until_el_displayed(:xpath, "//select[@name='filtroLojaEstado']", 5)        
     find("option[value='#{estado}']").select_option
     
     wait_until_el_displayed(:xpath, "//select[@name='filtroLojaRegiao']", 5)
     find("option[value='#{regiao}']").select_option
-
+    
     wait_until_el_displayed(:xpath, "//select[@name='filtroLojaCidade']", 5)
-    find("option[value='#{cidade}']").select_option
-
+    find(:xpath, "//select[@name='filtroLojaCidade']//child::option[@value='#{cidade}']").select_option
+    
     wait_until_el_displayed(:xpath, "//select[@name='filtroLojaBairro']", 5)
-    find("option[value='#{bairro}']").select_option
-
+    find(:xpath, "//select[@name='filtroLojaBairro']//child::option[@value='#{bairro}']").select_option
+    
+    sleep 1
     wait_until_el_displayed(:id, 'IdLojaFisicaSelecionado', 5)
     find(:xpath, "//option[contains(text(), '#{loja}')]").select_option
   end

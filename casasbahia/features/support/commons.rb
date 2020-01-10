@@ -15,5 +15,5 @@ module Commons
     wait = Selenium::WebDriver::Wait.new(options)
     element = wait.until { element = page.find(finder, elmt) }
     element if element.visible?
-  end
+  end 
 end

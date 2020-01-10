@@ -13,12 +13,17 @@ class Autenticacao < SitePrism::Page
 
   def login_sucesso
     wait_until_el_displayed(:id, 'Email', 2)
-    user.set    'user_automacao03112014_090638117@cnova.com'
+    #binding.pry
+    #ChromeSessionConfiguration.new(page.driver).prevent_request
+    wait_until_el_displayed(:id, 'Email', 2)
+    user.set    'user_automacao03112014_090635262@cnova.com'
     pass.set    '123456'
   end
 
-  def click_login_confirma
+  def click_login_confirma        
     bt_confirmaLogin.click
+    #binding.pry
+    #ChromeSessionConfiguration.new(page.driver).allow_requests
   end
 
   def remove_produto

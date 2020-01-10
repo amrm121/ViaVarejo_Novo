@@ -19,13 +19,15 @@ Funcionalidade: Buscar loja Retira
         |produto    |cep        |                
         |14971368   |'04801000' |
         
-@alterar_compra_normal_para_retira_validacao
+@alterar_compra_normal_para_retira_validacao @teste_compra
   Esquema do Cenario: Alterar comprar normal para retira
     Quando busco pelo o "<produto>"
     E levo o sku até a tela de Endereço através do fluxo de compra informando o "<cep>"
-    E altero a forma de entrega para a opção Retira '<estado>' '<regiao>' '<cidade>' '<bairro>' '<loja>'
+    E altero a forma de entrega para a opção Retira '<endereco_tipo>' '<estado>' '<regiao>' '<cidade>' '<bairro>' '<loja>'
     Então verifica que o tempo de retirada do produto na loja e de '<tempo_de_retirada>'
 
     Exemplos:
-      |produto  |cep       |estado  |regiao    |cidade   |bairro        |loja                                 |tempo_de_retirada  |
-      |13400014 |'13215276'|SP      |São Paulo |Jundiaí  |VL. RIO BRANCO|PontoFrio - Shopping Maxi Jundiaí 2  |Em 2h*             |
+      |produto |cep       | endereco_tipo      |estado  |regiao           |cidade               |bairro        |loja                          |tempo_de_retirada  |                        
+      |15077104|'05379000'| Outro SP_Mesmo Dia |SP      |São Paulo Capital|São Paulo            |Rio Pequeno   |Casas Bahia - Rio Pequeno     |Em 2h*             |
+      |15077104|'05379000'| Outro SP_Mesmo Dia |SP      |São Paulo Capital|São Paulo            |Rio Pequeno   |Casas Bahia - Rio Pequeno     |Em 2h*             |
+      

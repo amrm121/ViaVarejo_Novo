@@ -17,10 +17,8 @@ Funcionalidade: Compra pelo o Retira
     Então confirmo que o número do pedido foi apresentado 
 
     Exemplos:
-      | produto  | cep      | 
-    #  | 9600908  | 01311200 |
-      | 12639587 | 08040000 |
-      | 14817324 | 09520500 |
+      | produto  | cep      |
+      | 14817324 | 09181140 |
 
   @realizar_compra_retira_com_seguro @full_regression
   Esquema do Cenario: Realizar Compra Retira com seguros
@@ -33,7 +31,7 @@ Funcionalidade: Compra pelo o Retira
 
     Exemplos:
       | produto   | cep      | 
-      | 12369338  | 09520900 |
+      | 12369338  | 09520500 |
       
   @realizar_compra_retira_com_loja_especifica @full_regression
   Esquema do Cenario: Realizar Compra Retira com loja especifica
@@ -43,10 +41,8 @@ Funcionalidade: Compra pelo o Retira
     Então confirmo que o número do pedido foi apresentado 
 
     Exemplos:
-      | produto | cep       | loja                      |      
-      |4451578	|'15500004'|	Casas Bahia - Votuporanga |
-    # |4451578	|'35680062'|	Casas Bahia - Itauna      |
-    
+      |produto    |cep      |loja                       |        
+       |15341370	|'03066030' |Casas Bahia - Vila Carrão|    
 
   @alterar_compra_normal_para_retira
   Esquema do Cenario: Alterar comprar normal para retira
@@ -81,4 +77,4 @@ Funcionalidade: Compra pelo o Retira
 
     Exemplos:
       | produto  | cep      |
-      | 14817287 | 01311200 |     
+      | 14817287 | 09181140 |   

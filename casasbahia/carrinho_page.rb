@@ -120,7 +120,6 @@ class Carrinho < SitePrism::Page
   end
 
   def endereco_tela_seleciona_checkbox_retira
-    binding.pry
     checkbox_retira_rapido.click    
     @formaEntregaRetira = forma_entrega.text
     @formaEntrega = 'Retira Rápido'
